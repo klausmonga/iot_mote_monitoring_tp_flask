@@ -29,9 +29,6 @@ MOTES = [
         },
 
     ]
-@app.route("/",methods=['GET'])
-def bonjour():
-    return "Bonjour tout le monde"
 
 
 @app.route("/iot/all_mote",methods=['GET'])
@@ -40,8 +37,8 @@ def get_all_mote():
 
 @app.route("/iot/add_mote/",methods=['POST'])
 def add_new_mote():
-    new_motes = request.json
-    return jsonify(new_motes['motes'])
+    MOTES.append(request.json['motes'])
+    return jsonify(MOTES)
 
 
 @app.route("/iot/update_name/<id>/<name>", methods=["PUT"])
@@ -66,6 +63,6 @@ def delete_mote(id):
             motes_updated.append(mote)
     
     return jsonify(motes_updated)
-    
+
 if __name__ == "__main__":
     app.run(debug=True)
