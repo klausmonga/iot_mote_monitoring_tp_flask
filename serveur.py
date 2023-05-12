@@ -1,5 +1,7 @@
 from flask import Flask,jsonify,request
 
+#CREATE BY KLAUS MONGA WA KOWA
+
 app = Flask(__name__)
 
 MOTES = [
