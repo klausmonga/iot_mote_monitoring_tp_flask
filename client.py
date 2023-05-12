@@ -1,7 +1,7 @@
 import requests
 import json 
 
-
+#CREATE BY KLAUS MONGA WA KOWA
 
 
 def get_all_motes():
@@ -18,14 +18,14 @@ def create_mote(mote):
 
 def update_mote_name(id,name):
     headers = {"Accept":"application/json"}
-    req = requests.get(f"http://127.0.0.1:5000/iot/update_name/{id}/{name}",headers)
+    req = requests.put(f"http://127.0.0.1:5000/iot/update_name/{id}/{name}",headers)
     rep = req.json()
     print(rep['reponse'])
 
 #IT GOING TO DELETE THE MOTE
 def unlink_mote(id):
     headers = {"Accept":"application/json"}
-    req = requests.get(f"http://127.0.0.1:5000/iot/update_name/{id}/{name}",headers)
+    req = requests.delete(f"http://127.0.0.1:5000/iot/crossout_mote/{id}",headers)
     rep = req.json()
     print(rep['reponse'])
 
